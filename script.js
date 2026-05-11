@@ -68,3 +68,17 @@ function animarTitulo() {
         delay: 0.5,
     });
 }
+
+// ============================
+// WHATSAPP
+// ============================
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const nome = document.getElementById("form-nome").value;
+    const email = document.getElementById("form-email").value;
+    const msg = document.getElementById("form-mensagem").value;
+    const texto = `Olá! Meu nome é ${nome} (${email}). ${msg}`;
+    const url = `https://wa.me/5521989898923?text=${encodeURIComponent(texto)}`;
+    window.open(url, "_blank");
+});
